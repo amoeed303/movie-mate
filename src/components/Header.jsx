@@ -4,11 +4,13 @@ import { Link, NavLink } from "react-router-dom";
 
 export const Header = () => {
   const activeClass =
-    "text-base block py-2 pr-4 pl-3 text-white bg-sky-700 dark:bg-gray-950 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white lg:dark:bg-gray-900";
+    "text-base block py-2 pr-4 pl-3 text-white bg-sky-700 dark:bg-gray-950 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white lg:dark:bg-gray-900 ";
   const inActiveClass =
     "text-base block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700";
   const [hidden, setHidden] = useState(true);
-  const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem("darkMode"))||true);
+  const [darkMode, setDarkMode] = useState(
+    JSON.parse(localStorage.getItem("darkMode")) || true
+  );
 
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
@@ -22,7 +24,7 @@ export const Header = () => {
 
   return (
     <header>
-      <nav className=" bg-white shadow-md dark:bg-gray-900 border-b dark:border-gray-700">
+      <nav className="  bg-white shadow-md dark:bg-gray-900  border-b dark:border-gray-700">
         <div className=" flex flex-wrap items-center justify-between mx-auto p-6">
           <Link to="#" className="flex items-center">
             <img src={Logo} className="h-10 mr-2" alt="MovieMate"></img>
